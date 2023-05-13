@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" id="html" class="html" style="" data-extra-info="HTML Global attributes" title="Advisory information" draggable="false">
+
+<head>
+    <!-- 注释不会显示在浏览器中，但查看网页源代码时会被看到 -->
+    <meta charset="utf-8" />
+    <meta name="key" content="value" />
+
+    <title>HTMLtag提醒</title>
+    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" href="https://tuntuntunwu.com/favicon.ico" />
+    <link rel="stylesheet" href="xxx.css" />
+    <!-- 查看网页源代码可以看到一切代码内容，包括在.html中写的css -->
+    <style>
+        /* <style>tag中可使用css的注释方式 */
+    </style>
+    <script src="xxx.js"></script>
+    <!-- 查看网页源代码可以看到一切代码内容，包括在.html中写的javascript -->
+    <script>
+        // <script>tag中可使用javascript的注释方式
+        /*
+        <script>tag中可使用javascript的注释方式
+        */
+    </script>
+</head>
+
+<body>
+    <h1>这里是一些HTML的tag的提醒</h1>
+    <hr />
+    <p>
+        <strong>strong importance</strong> <em>emphasis</em> <sub>subscript</sub> <sup>superscript</sup> <del>deleted text</del> <ins>inserted text</ins> 
+    </p>
+    <p>
+        <bdo dir="rtl">bidirectional text override</bdo><br />
+        blogs' comments may use <bdi>bidirectional isolate</bdi> to ensure the correct directionality of an unknown language.
+    </p>
+    <hr />
+    <p>
+        <samp>sample output: big, the whole sample.</samp><br />
+        <code>inline code: small, the specific code including <var>variables</var>.</code>
+    </p>
+    <hr />
+    <pre>
+        春眠不觉晓，
+        处处闻啼鸟。
+        夜来风雨声，
+        花落知多少。
+    </pre>
+    <hr />
+    <address>
+        Written by <a href="mailto:webmaster@example.com">Jon Doe</a>.<br /> 
+        Visit us at:<br />
+        Example.com<br />
+        Box 564, Disneyland<br />
+        USA
+    </address>
+    <hr />
+    <p>
+        This is an anchor to send e-mails: <a rel="nofollow" href="mailto:xxx1@163.com;xxx2@126.com?cc=xxxcc@163.com&bcc=xxxbcc@163.com&subject=邮件主题&body=邮件内容">a</a><br />
+        More details: <a target="_blank" href="https://www.runoob.com/html/html-links.html#comments">a</a><br />
+    </p>
+    <hr />
+    
+    <div>
+        <a target="_blank" href="https://www.runoob.com/html/html-tutorial.html">
+            <img src="http://www.runoob.com/images/logo.png" alt="runoob.com" width="258" height="39" loading="lazy" />
+        </a>
+    </div>
+    <div>
+        <img src="http://www.runoob.com/images/logo.png" alt="runoob.com" width="258" height="39" loading="lazy" usemap="#map">
+        <map name="map">
+            <area shape="rect" coords="0,0,160,38" alt="runoob" href="https://www.runoob.com/">  <!-- top left: (x1, y1) bottom right: (x2, y2) -->
+            <area shape="circle" coords="168,28,5" alt="404" href="https://www.google.com/">  <!-- center: (x, y) radius: r -->
+            <area shape="poly" coords="175,38,216,0,257,38" alt="baidu" href="https://www.baidu.com/">  <!-- coordinates: (x1, y1) (x2, y2) (x3, y3) ... -->
+        </map>
+    </div>
+    <hr />
+    <table  border="1">  <!-- border is a deprecated attribute, it's used here for convenience -->
+        <caption>Phone Book</caption>
+        <colgroup>
+            <col />
+            <col style="background-color: red;" />
+            <col span="2" style="background-color: yellow;" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th>First Name:</th>
+                <td>Bill Gates</td>
+                <td colspan="2">Steve Jobs</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th rowspan="2">Telephone:</th>
+                <td>555 77 854</td>
+                <td>555 88 854</td>
+                <td>555 88 855</td>
+            </tr>
+            <tr>
+                <td>555 77 855</td>
+                <td>555 88 856</td>
+                <td>555 88 857</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr />
+    <ol type="i" start="4" reversed="reversed">
+        <li>4</li>
+        <li>3</li>
+        <li>2</li>
+        <li>1</li>
+        <li>0</li>
+        <li>-1</li>
+        <li>type == style="list-style-type: xxx;"</li>
+        <li>1 == decimal (default)</li>
+        <li>i == lower-roman</li>
+        <li>I == upper-roman</li>
+        <li>a == lower-alpha</li>
+        <li>A == upper-alpha</li>
+    </ol>
+    <ul style="list-style-type: square;">
+        <li>disc (default)</li>
+        <li>circle</li>
+        <li>square</li>
+    </ul>
+    <hr />
+    <iframe src="about:blank" width="200" height="200" loading="lazy" name="iframe"></iframe><a href="https://www.runoob.com/" target="iframe">RUNOOB.COM</a>
+    <hr />
+    <form action="" method="" enctype="" target="iframe">
+        text(default): <input type="text" name="text" /><br />
+        password: <input type="password" name="password" /><br />
+        hidden: <input type="hidden" name="hidden" value="a value that is not displayed" /><br />
+        radio:<br />
+        <input type="radio" name="radio" value="male" />男<br />
+        <input type="radio" name="radio" value="female" checked="checked" />女<br />
+        checkbox:<br />
+        <input type="checkbox" name="checkbox" value="bike" />自行车<br />
+        <input type="checkbox" name="checkbox" value="car" checked="checked" />汽车<br />
+        select:<br />
+        <select name="select">
+            <option value="0"></option>
+            <option value="1">one</option>
+            <option value="2" selected="selected">two</option>
+            <optgroup label="more">
+                <option value="3">more three</option>
+                <option value="4">more four</option>
+            </optgroup>
+        </select><br />
+        textarea:<br />
+        <textarea name="textarea" id="javascript" cols="30" rows="10"></textarea><br />
+        button: <input type="button" name="button" /><br />
+        submit: <input type="submit" />
+    </form>
+    <hr />
+
+    <button onclick="myFunction();">Say hi to JavaScript!</button>
+    <script>
+        function myFunction() {
+            document.getElementById("javascript").innerHTML = "Hello JavaScript!";
+        }
+    </script>
+    <noscript>Sorry, your browser forbids JavaScript!</noscript>
+    <hr />
+    <p style="background-color: #ABC;">a'b a×b a÷b</p>
+    <hr />
+    <p>a&#768; a&#769; a&#770; a&#771; &nbsp; &lt; &gt; &amp; &semi; &times; &divide; &yen; &dollar; &euro; &copy; &reg; &trade; &#65; &#97;</p>
+    <hr />
+    <br />
+    <br />
+    <br />
+
+    <h1>这里是一些HTML5的tag的提醒</h1>
+    <hr />
+    <video id="video" width="420" height="240" controls="controls">
+        <source src="https://baikevideo.cdn.bcebos.com/media/mda-OggHBmeZEwxyMv5u/fa8e3619de79409d32d50d3229568a1f.mp4" type="video/mp4" />
+        <source src="https://baikevideo.cdn.bcebos.com/media/mda-OggHBmeZEwxyMv5u/fa8e3619de79409d32d50d3229568a1f.ogg" type="video/ogg" />
+        <source src="https://baikevideo.cdn.bcebos.com/media/mda-OggHBmeZEwxyMv5u/fa8e3619de79409d32d50d3229568a1f.webm" type="video/webm" />
+        <object data="https://baikevideo.cdn.bcebos.com/media/mda-OggHBmeZEwxyMv5u/fa8e3619de79409d32d50d3229568a1f.mp4" width="420" height="240">
+            <embed src="https://baikevideo.cdn.bcebos.com/media/mda-OggHBmeZEwxyMv5u/fa8e3619de79409d32d50d3229568a1f.mp4" width="420" height="240" />
+        </object>
+    </video><br />
+    <button onclick="playOrPause();">Play/Pause</button>
+    <script>
+        var video = document.getElementById("video");
+        function playOrPause() {
+            if (video.paused)
+                video.play();
+            else
+                video.pause();
+        }
+    </script>
+    <hr />
+    <form id="form" action="">
+        number: <input type="number" name="number" min="1" max="5" step="0.2" required="required" /><br />
+        range: <input type="range" name="range" min="1" max="10" step="1" value="4" /><br />
+        date: <input type="date" name="date" min="2022-01-01" max="2022-12-31" step="2" value="2022-06-13" /><br />
+        time: <input type="time" name="time" value="03:27" /><br />
+        datetime-local: <input type="datetime-local" name="datetime-local" value="2022-06-13T03:27" /><br />
+        color: <input type="color" name="color" value="#556677" /><br />
+        file: <input type="file" name="file" multiple="multiple" accept=".txt, .doc, .docx" />the accept attribute uses unique file type specifiers.<br />
+        email: <input type="email" name="email" pattern="" /><br />
+        url: <input type="url" name="url" pattern="" /><br />
+        input attributes: <input type="text" name="text1" list="datalist" required="required" autocomplete="on" placeholder="placeholder" form="form" formaction="" formmethod="" formenctype="" formtarget="_blank" /><br />
+        <datalist id="datalist">
+            <option value="permissible value">
+            <option value="recommended value">
+            <option value="this option is different from select option">
+        </datalist>
+        image (graphical submit button): <input type="image" src="http://www.runoob.com/images/logo.png" alt="runoob.com" width="258" height="39" />
+    </form>
+    <hr />
+    <p>drag RUNOOB.COM image to division:</p>
+    <div ondragover="allowDrop(event);" ondrop="drop(event);" style="width: 350px; height: 70px; padding: 10px; border: 1px solid #aaaaaa;"></div>
+    <img id="drag" src="http://www.runoob.com/images/logo.png" alt="runoob.com" width="258" height="39" loading="lazy" draggable="true" ondragstart="drag(event);" />
+    <script>
+        function drag(e) {
+            e.dataTransfer.setData("Text", e.target.id);
+        }        
+        function allowDrop(e) {
+            e.preventDefault();
+        }        
+        function drop(e) {
+            e.preventDefault();
+            var data = e.dataTransfer.getData("Text");
+            e.target.appendChild(document.getElementById(data));
+            var file = e.dataTransfer.files[0];
+        }
+    </script>
+    <hr />
+</body>
+
+</html>
+

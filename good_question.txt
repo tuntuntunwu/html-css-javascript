@@ -1,0 +1,351 @@
+HTML：
+------
+字符集与字符编码：
+字符集事关字符是否被一种计算机语言支持，与语言本身有关。字符编码则事关文件中的字符如何实际地存储和传输，与语言无关。一个语言可以有默认字符编码方式，也可以没有（由该语言的编译器、解释器决定）。
+https://zhuanlan.zhihu.com/p/260192496
+https://www.zhihu.com/question/329256350/answer/715896036
+a character --Coded Character Set (CCS)--> a code point --Character Encoding Form (CEF)--> a sequence of code units --Character Encoding Scheme (CES)--> a sequence of bytes
+https://blog.csdn.net/weixin_39671621/article/details/111119560
+https://www.unicode.org/reports/tr17/
+
+HTML<!DOCTYPE>声明：
+https://www.runoob.com/tags/tag-doctype.html
+
+HTML指定字符编码方式：
+HTML4.01: <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+HTML5: <meta charset="UTF-8">
+
+HTML引入外部.css和外部.js：
+HTML4引入时需指定type="text/css"和type="text/javascript"，而HTML5则不用，因为其为默认值。
+
+HTML(5)tag提醒：
+https://github.com/tuntuntunwu/html-css-js/blob/master/html.html
+
+HTML中href、src属性的区别：
+href是hypertext reference的缩写，表示超文本引用。用来建立当前元素和文档之间的链接。其内容并不必须，不影响文档的加载。
+常用的有：a、link。例如：<link href="xxx.css" rel=”stylesheet“/>。因为并不必须，浏览器会并行下载该css文件，不会停止对当前文档的处理渲染。这也是建议使用link而非@import加载css的原因。
+src是source的缩写。src指向的内容会嵌入到文档中当前标签所在的位置，因而src的内容是文档页面中必不可少的一部分。
+常用的有：img、iframe、script、source、object、embed。例如：<script src="script.js"></script>。当浏览器解析到该元素时，会暂停浏览器的渲染，直到该资源加载完毕。这也是将js脚本放在底部而不是头部的原因。
+img、iframe有loading="lazy"属性延缓加载；script有async、defer属性延缓加载；而source、object、embed没有可帮助延缓加载属性，必须立即加载。
+
+HTML中块级元素（block-level）、内联元素（inline）的区别：
+https://www.runoob.com/css/css-display-visibility.html#comments
+
+HTML中的未知tag和未知属性：
+HTML未知tag相当于<span>。HTML未知属性将被忽略。
+每个浏览器都有自己的一套将tag认定为未知而非错误的规则。常见地，不要让tag以数字开头，这样会被认定为错误tag而不被渲染。
+https://developer.mozilla.org/en-US/docs/Web/API/HTMLUnknownElement
+
+HTML字符实体：
+https://www.runoob.com/html/html-entities.html
+使用entitiy_name的好处是其易于记忆。使用entitiy_number的好处是其被更广泛地支持，entitiy_number完全地与Unicode字符集的码点对应。
+常用字符实体：
+' ' &nbsp; &#160; | '<' &lt; &#60; | '>' &gt; &#62; | '&' &amp; &#38; | ';' &semi; &#59;
+'×' &times; &#215; | '÷' &divide; &#247; | '¥' &yen; &#165; | '$' &dollar; &#36; | '€' &euro; &#8364;
+'©' &copy; &#169; | '®' &reg; &#174; | '™' &trade; &#8482;
+https://html.spec.whatwg.org/multipage/named-characters.html#named-character-references
+
+URI和URL的区别：
+https://www.zhihu.com/question/21950864/answer/154309494
+
+URL编码：
+RFC3986文档规定URL默认字符集及编码是ASCII码，对于Unicode字符RFC文档建议使用UTF-8编码。总而言之就是Unicode字符集和UTF-8编码。
+当然，对于传来的URL具体如何解析，每个服务器都可自行写代码进行个性化解析。但为了保证最大互操作性，建议显式指定字符编码方式来编码URL，而不依赖于浏览器的默认实现。
+https://www.cnblogs.com/jerrysion/p/5522673.html
+
+SGML、XML和XHTML：
+1、标准通用标记语言(Standard Generalized Markup Language, SGM/SGML)，是一种①定义电子文档结构和②描述其内容的国际标准语言，制定其的基本思想是③把文档的内容与样式分开。其是ISO/ANSI/ECMA的一个共同标准，发布于1986年，是所有电子文档标记语言的起源，早在万维网发明之前就已存在了。SGML为语法置标提供了异常强大庞大的工具，同时具有极好的扩展性，因此在数据分类、索引、传递中非常有用。
+2、可扩展标记语言(Extensible Markup Language, XML)，是一种用于①标记电子文档使其具有结构性的标记语言。其是SGML的子集，最早发布于1998年。XML简单又灵活，为基于Web的应用提供了一种描述数据和交换数据的有效方法。但是，XML并非是用来取代HTML的，HTML着重描述如何将文档显示在浏览器中，而XML与SGML相近，它着重描述如何将数据以结构化方式表示。
+3、XHTML是以XML格式编写的HTML，最早发布于2001年，制定其的目标是取代HTML，但未能实现。标记上，XHTML1.0、XHTML1.1与HTML4.01几乎是相同的，是一种更严格更纯净的HTML版本。XHTML5则是属于HTML5标准的一部分，且名称已改为“以XML序列化的HTML5”，而非“可扩展的HTML”。在今日（2022年），相比于HTML5，XHTML5仍远未被主流接受。
+XHTML与HTML相比最重要的区别参见 https://www.runoob.com/html/html-xhtml.html
+
+HTML多媒体：
+音频：.mp3（√） .wav（√） Ogg音频格式（√） | .wma（Windows Media） .rm.ram（RealAudio，低带宽） .mid.midi（仅包含指令，所以小巧）
+视频：.mp4（√） .webm（√） Ogg视频格式（√） | .wmv（Windows Media）+.mov（QuickTime） .rm.ram（RealVideo，低带宽） .avi（用很多）
+https://www.runoob.com/html/html-media.html
+
+HTML插件与拓展：
+https://www.jianshu.com/p/d78ce85dbfd5
+https://zhuanlan.zhihu.com/p/434061745
+
+HTML5新内容：
+https://developer.mozilla.org/en-US/docs/Glossary/HTML5
+1、关于整体结构的语义标签：<header>、<main>、<footer>、<nav>、<section>、<article>、<aside>、<figure>、<figcaption>（不同于<table>、<caption>）。
+2、新多媒体标签：<canvas>、<svg>、MathML标签、<picture>、<video>、<audio>、<source>、<track>。
+3、新交互标签：<input type="number range date time datetime-local color email url image">、<datalist>、<output>。
+4、对移动设备的支持：拖放功能、移动设备APIs（地理位置、震动、屏幕朝向、各种Sensor-重力感应、加速感应、磁力感应等）等。
+5、新Web APIs：客户端通信（Http APIs、SSE、WebSocket）、客户端存储（Storage、IndexedDB）、客户端线程（Worker）等。
+
+HTML5兼容所有浏览器的方法：
+在<head>中添加以下代码：
+<!-- [if lt IE 9]>
+    <script src="http://cdn.static.runoob.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+<![endif] -->
+<style>
+header, main, footer, nav, section, article, aside, figure {
+    display: block;
+}
+</style>
+
+HTML5中canvas、SVG的区别：
+本质区别是方式的不同：canvas绘图是调用方法，SVG创建图形是构建XML元素树。
+canvas2D绘图API更为简单，文本渲染能力弱             |   SVG功能丰富，支持各种曲线、文本、动画、滤镜等
+依赖分辨率                                       |   不依赖分辨率
+不支持事件处理，不能被引擎抓取，禁用JS则无法使用       |   支持事件处理，可以被引擎抓取，禁用JS不影响HTML中已存在部分
+适合小面积、大数据量变化的动态渲染。如图像密集型的游戏   |   适合大面积、小数据量变化的高质量渲染。如谷歌地图，高保真文档
+https://www.zhihu.com/question/19690014/answer/21575118
+
+
+
+CSS：
+------
+HTML引入CSS的4种方式：
+https://www.runoob.com/w3cnote/html-import-css-method.html
+
+link、@import方式的区别：
+link是HTML标签，可被DOM操作   |   @import是CSS方式，不可被DOM操作
+link被浏览器广泛支持          |   @import是CSS2.1提出的，部分老浏览器不支持
+link在页面加载时同步加载       |   @import在页面全部被加载完毕后再加载
+
+Web颜色：
+1、计算机颜色使用“光学三原色”--红绿蓝（RGB），而非“颜料三原色”--红黄蓝（CMY，青Cyan、品红Magenta、黄Yellow）。这是由于RGB是加色混合，颜色越加越亮，全加成白。而CMY是减色混合，颜色越加越暗，全加成黑。
+2、Web颜色的表示方法：https://www.runoob.com/cssref/css-colors-legal.html。3位数的 #RGB，实际上是6位数 #RRGGBB。
+3、216个Web安全色：https://www.runoob.com/html/html-colors.html
+
+Web安全字体：
+https://www.runoob.com/cssref/css-websafe-fonts.html
+
+CSS单位：
+绝对长度单位：1in = 2.54cm = 25.4mm = 6pc = 72pt = 96px
+相对长度单位：em/rem | lh/rlh | ex/cap/ch/ic | vw/vh/vi/vb | vmin/vmax
+其他单位：https://zhuanlan.zhihu.com/p/440269115
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Values_and_Units
+
+CSS选择器：
+1、
+'*' 通用选择器（Universal selector） | 'xxx' 元素选择器（Type selector） | '.xxx' 类选择器（Class selector） | '#xxx' ID 选择器（ID selector） | '[xxx]' 属性选择器（Attribute selector）
+',' 选择器列表（Selector list）
+' ' 后代组合器（Descendant combinator） | '>' 直接子代组合器（Child combinator） | '~' 一般兄弟组合器（General sibling combinator） | '+' 紧邻兄弟组合器（Adjacent sibling combinator）
+https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Selectors
+https://www.lmlphp.com/user/57915/article/item/782527/
+https://www.zhangxinxu.com/wordpress/2016/08/css-parent-selector/
+2、
+:root | :link/:visited/:hover/:active（lvha口诀） | :target | :checked | :required/:optional | :focus/:focus-within | :enabled/:disabled
+:first-child/:last-child/:first-of-type/:last-of-type | :nth-child()/:nth-last-child()/:nth-of-type()/:nth-last-of-type() | :only-child/:only-of-type/:empty
+:lang() | :not()/:is()/:where()
+https://developer.mozilla.org/zh-CN/docs/Web/CSS/Pseudo-classes
+3、
+::before/::after | ::first-letter/::first-line | ::selection
+https://developer.mozilla.org/zh-CN/docs/Web/CSS/Pseudo-elements
+
+CSS样式优先级（Specificity）：
+https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity
+https://specifishity.com/
+（Selector list）https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity#matching_selector
+（increase specificity）https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity#the_is_and_not_exceptions
+
+CSS(3)property提醒：
+https://github.com/tuntuntunwu/html-css-js/blob/master/css.css
+
+CSS视觉格式化模型：（同层的与浮动的交互）
+1、box：
+HTML文档会根据CSSbox模型将每个element生成0-n个boxes（自身box及其后代boxes），格式化即指将文档中所有element统一格式化为box（关乎底层的DOM形成、视口渲染等）。
+box与element并不是一一对应的，有时多个element会合并生成一个box，有时一个element会生成多个box。但通常，一个element会生成一个代表自身的box。
+'display: block; list-item; table;' --> block-level element --generate--> a principal block-level box that contains descendant boxes and content(anonymous boxes)
+'display: inline; inline-block; inline-table;' --> inline-level element --generate--> an inline-level box that contains descendant boxes and content(anonymous boxes)
+2、formatting context：
+每个box都会参加一个formatting context。formatting context指一片布局区域，其中的boxes根据规则依次布局在此区域中。不同的formatting context有不同的布局规则。
+共有5种formatting context：BFC（block formatting context）、IFC（inline formatting context）、FFC（flex formatting context）、GFC（grid formatting context）、RFC（ruby formatting context）。
+其中，IFC只能由底层自动建立；BFC既可由底层自动建立，又可通过多种方式手动建立；而FFC、GFC、RFC则只能通过声明'display'手动建立。
+现在我们可以更详细地表述何为格式化了，格式化指 文档中每个element都生成0-n个boxes，每个box都参加一个formatting context并依照规则布局其中，最终将文档统一为被formatting contexts布局的boxes 的过程。
+3、formatting context的建立：
+BFC、FFC、GFC、RFC的手动建立很好理解，手动地为element（box）声明'display'特定值（BFC还有更多方法），即可使该element（box）建立自己的独立formatting context，其子element（box）将依照规则布局其中。
+'display: flow-root; inline-block; inline-table; <display-internal>;' --establish--> BFC
+'display: flex; inline-flex;' --> flex container --establish--> FFC
+'display: grid; inline-grid;' --> grid container --establish--> GFC
+'display: block ruby; ruby;' --> ruby container --establish--> RFC
+相较之下，IFC、BFC的自动建立需要花些时间理解。
+block-level boxes参加BFC（BFC中只有block-level boxes），沿block方向依次排布；inline-level boxes参加IFC（IFC中只有inline-level boxes），沿inline方向依次排布。连续的block-level boxes参加并形成（自动建立）BFC；连续的inline-level boxes参加并形成（自动建立）IFC。
+block-level element（box）几乎同时也是block container。block container中如果存在任一block-level box，其余inline-level box将被强制包裹为anonymous block-level box（在此anonymous box中自动建立IFC），从而使block container中仅存在block-level box。这些block-level box将参加其自身参加的BFC。
+block container中如果全部为inline-level box，这些inline-level box将自动建立IFC，并跟随此block container参加BFC。
+inline-level element（box）及其子inline-level box将参加同一个IFC。
+'display: block; list-item; table' --> block container --> (if any block-level box in) --participate(continue)--> the BFC it belongs to
+                                                |--> (if all inline-level boxes in) --establish--> IFC
+'display: inline;' --> (if any block-level box in) --participate(continue)--> the BFC its block container belongs to
+            |--> (if all inline-level boxes in) --participate(continue)--> the IFC it belongs to
+4、display：
+每个element（box）都既参加其父element（box）的formatting context，又决定其子elements（boxes）参加的formatting context（带子一起参加或建立自己的formatting context让子来参加）。
+因此每个element（box）都可视为有2种display type，并由其唯一的'display'属性决定：①outer display type：指出其在父element（box）中的排布方式。②inner display type：指出其子elements（boxes）的排布方式。
+
+'display: block; list-item; table' --generate--> a principal block-level box --> outer display type: block --> block-level box
+                              |                                                                                       +          = block box
+                              |--participate(continue)/establish--> BFC/IFC  --> inner display type: flow  --> block container
+
+'display: inline-block; inline-table' --generate--> an inline-level box --> outer display type: inline    --> inline-level box
+                              |                                                                                      +          = atomic inline-level box
+                              |--establish--> BFC                       --> inner display type: flow-root --> block container
+
+'display: inline' --generate--> an inline-level box --> outer display type: inline --> inline-level box
+             |                                                                                +          = inline box
+             |--participate(continue)--> BFC/IFC    --> inner display type: flow --> (only when all inline-level boxes in)
+
+https://www.w3.org/TR/2011/REC-CSS2-20110607/visuren.html
+https://developer.mozilla.org/en-US/docs/Web/CSS/Visual_formatting_model
+https://www.w3.org/TR/css-display-3/
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/In_Flow_and_Out_of_Flow#taking_an_item_out_of_flow
+5、BFC注意：
+①外边距重叠。②手动建立BFC。
+https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing
+https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Block_formatting_context
+6、IFC注意：
+①line box。②'vertical-align'与'line-height'。
+https://www.w3.org/TR/2011/REC-CSS2-20110607/visuren.html#inline-formatting
+https://blog.csdn.net/qq_15601471/article/details/119903856
+https://juejin.cn/post/6882609384854126599
+
+CSS定位层叠：（不同层间的重叠覆盖）
+同与formatting context关联的'display'一样，与stacking context关联的'z-index'决定了！！！定位元素！！！2方面内容：①决定其在所属的stacking context中的重叠渲染顺序。②决定其子elements（boxes）所属的stacking context（是否建立新的stacking contex让子所属）。
+对于一个！！！定位！！！element（box）自身而言，'z-index: auto;' == 'z-index: 0;'，其stack level都为0，不影响其在所属的stacking context中的重叠渲染顺序。但对其子elements（boxes）而言，'z-index: auto;' != 'z-index: 0;'，因为这直接决定了该element是否建立新的stacking contex让其子所属。
+https://www.w3.org/TR/CSS21/visuren.html#z-index
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context
+https://www.jianshu.com/p/8645b29f96b6
+
+CSS3新内容：
+1、各模块属性拓展：多个background-image、支持渐变作为图像（linear-gradient()）；颜色支持透明rgba()；字体不再需要安全字体，可使用@font-face引入；支持圆角border-radius、支持阴影text-shadow box-shadow。
+2、变换（transform）、过渡（transition）和动画（animation）。
+3、新布局方式：flexbox、grid、multi-column。
+4、方方面面：更多选择器、更多@rules、更多data-types、更多functions等。
+
+CSS3布局与对齐：
+https://developer.mozilla.org/zh-CN/docs/Learn/CSS/CSS_layout
+https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Box_Alignment
+my_blog...
+https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout
+https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Grid_Layout
+https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Columns
+
+CSS3响应式设计:
+https://developer.mozilla.org/zh-CN/docs/Learn/CSS/CSS_layout/Responsive_Design
+1、<meta name="viewport" content="width=device-width, initial-scale=1">
+2、响应式图片：①img { max-width: 100%; }。②<picture>和<img>的srcset+sizes属性。
+3、响应式文字排版：①媒体查询+文字字体。②使用视口单位 h1 { font-size: calc(1.5rem + 3vw); }。
+4、响应式布局：①媒体查询+float+position。②flexbox、grid、multi-column。
+https://developer.mozilla.org/zh-CN/docs/Learn/CSS/CSS_layout/Media_queries
+https://developer.mozilla.org/zh-CN/docs/Web/CSS/Media_Queries
+1、.css：①@media xxx and (xxx) {}。
+2、.html：①<link media="xxx and (xxx)" />。②<style media="xxx and (xxx)"></style>。③<picture><source media="xxx and (xxx)"></picture>
+3、.js：①let a = window.matchMedia("xxx and (xxx)"); if (a.matches) {} a.addListener(evt => { if (evt.matches) {} }); a.removeListener(callback);
+
+CSS3函数：
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Functions
+
+
+
+JavaScript：
+------
+JavaScript和ECMAScript的关系：
+https://www.zhihu.com/question/538397613/answer/2585850265
+
+JavaScript4种便捷输出方式：
+https://www.runoob.com/js/js-output.html
+
+IEEE754浮点数标准：
+https://blog.csdn.net/gao_zhennan/article/details/120717424
+
+JavaScript与Unicode字符：
+http://www.ruanyifeng.com/blog/2014/12/unicode.html
+
+JavaScript预编译与作用域链：
+https://juejin.cn/post/6844904110999732232
+https://blog.csdn.net/haokur/article/details/80541281
+1、全局预编译发生在页面加载完成时，而函数预编译则发生在每一次函数调用时。每一个预编译都会产生一个变量对象（VO，全局预编译叫GO，函数预编译叫AO），并将其加入作用域链。
+2、预编译顺序：var -> params -> function。
+
+JavaScript词法（静态）作用域：
+https://blog.csdn.net/qq_32036091/article/details/120297142
+
+JavaScript块作用域的实现：
+https://blog.csdn.net/qq_44182284/article/details/117222495#JavaScript__133
+
+JavaScript同步与异步（Event loop）：
+https://www.dengzhanyong.com/article/260
+https://blog.csdn.net/qq_37899792/article/details/103236906
+https://segmentfault.com/a/1190000019494012
+https://html.spec.whatwg.org/multipage/webappapis.html#event-loops
+
+渲染页面-浏览器的工作原理：
+https://developer.mozilla.org/zh-CN/docs/Web/Performance/How_browsers_work
+https://blog.csdn.net/p1967914901/article/details/122690769
+（DNS）https://zhuanlan.zhihu.com/p/24913080
+（TCP）https://blog.csdn.net/qq_44647809/article/details/115143100
+
+Http：
+https://www.runoob.com/http/http-tutorial.html
+1、Http默认使用端口是80，HTTPS的默认使用端口是443。某些服务器默认服务端口是8080，如Apache Tomcat web server。
+2、Http三点注意：①http通信方式是客户端->服务器->客户端。②http是无连接、无状态的。③http是媒体独立的。可发送任何类型的数据，也可指定MIME类型对数据进行特定解析。
+3、常见请求方法：
+HTTP1.0定义：GET 请求页面 | HEAD 只请求响应头 | POST 提交数据
+HTTP1.1定义：PUT 提交数据以取代 | PATCH 提交数据以部分取代 | DELETE 请求删除页面 | OPTIONS 请求服务器性能指标 | TRACE 回显服务器收到的请求用于测试或诊断 | CONNECT 保持连接
+REST接口风格：GET、POST、PUT、DELETE，约定这4个接口分别获取、创建、替换和删除“资源”
+4、常见状态码：
+1xx 需请求者继续操作：100 Continue | 101 Switching Protocols（http to https/ws/wss）
+2xx 成功：200 OK（all） | 201 Created（POST/PUT/PATCH）
+3xx 重定向：300× | 301 Moved Permanently | 302 Found（moved temporarily） | 303× | 304 Not Modified（use cache page）
+4xx 客户端错误：400 Bad Request | 401 Unauthorized | 402x | 403 Forbidden | 404 Not Found | 408 Request Time-out
+5xx 服务器端错误：500 Internal Server Error | 501 Not Implemented（can't operate） | 502 Bad Gateway（proxy wrong） | 503 Service Unavailable（overload or maintenance）
+5、常见头部信息：
+请求头：User-agent | Host | Connection | Content-Type | Cache-Control If-Modified-Since
+响应头：Server | Date | Content-Type | Content-Length | Access-Control-Allow-Origin | Cache-Control Age Expires Last-Modified
+6、常见MIME类：
+1、text/plain（文本文件默认值） | text/html | text/css | text/javascript | text/xml
+2、application/octet-stream（二进制文件默认值） | application/json | application/xml | application/pdf | application/msword | application/rar | application/x-www-form-urlencoded（客户端常用） | multipart/form-data（客户端常用）
+3、image/jpeg | image/png | image/gif
+4、audio/mpeg | audio/wav | audio/ogg
+5、video/mp4 | video/webm | video/ogg
+https://developer.mozilla.org/en-US/docs/Web/HTTP
+（multipart/form-data）https://juejin.cn/post/6844903810079391757
+
+GET和POST的区别：
+https://www.zhihu.com/question/28586791/answer/767316172
+1、
+GET是“读取”一个资源。比如GET到一个html文件。读取不应该对访问的数据有副作用，没有副作用被称为“幂等”。因为GET是读取，就可以对GET请求的数据做缓存。
+POST往往是有副作用的，不幂等的。不幂等也就意味着不能随意多次执行，因而也就不能缓存，也不能把POST请求保存为书签。此外如果尝试重新执行POST请求，浏览器也会弹一个框提示下这个刷新可能会有副作用，询问要不要继续。
+当然，服务器的开发者完全可以把GET实现为有副作用，把POST实现为没有副作用，只不过这和浏览器的预期不符。
+2、触发与数据：
+GET可以是表单，可以是书签，可以是HTMLtag中的href、src属性，也可以是地址栏输入。但GET需要带参数时，就只能依靠url上附带querystring。
+POST都来自表单提交。POST的数据均存放在请求体内。但在POST一个表单时，url上也可以带参数，只要<form action="url">里的url带querystring就行。
+3、安全：
+GET和POST在安全这件事上仅仅是个小角色，业界的通行做法就是https。但的确，GET放在url上的参数有更多机会被泄漏，比如携带私密信息的url会展示在地址栏上，大量的中间节点包括网关，代理等都可获得并输出完整的url。所以只要记得一般情况下，私密数据传输用POST+body就好。
+
+JavaScript跨域：
+https://juejin.cn/post/6844903767226351623
+
+
+
+Web：
+------
+Web缓存：
+...
+
+渐进式Web应用（Progressive Web Apps, PWA）：
+...
+https://developer.mozilla.org/zh-CN/docs/Web/Progressive_web_apps
+
+HTMLlang属性与Web应用国际化：
+...
+https://juejin.cn/post/6844903913255092231
+
+
+
+
+
+https://www.zhihu.com/question/51132164?sort=created
+
+https://zhuanlan.zhihu.com/p/24913080
+
+https://zhuanlan.zhihu.com/p/445810614
+
+mvc与mvvm:
+https://blog.csdn.net/qq_51066068/article/details/125441774
+
+https://css-tricks.com/snippets/css/complete-guide-grid/

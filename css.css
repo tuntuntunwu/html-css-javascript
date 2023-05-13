@@ -1,0 +1,356 @@
+/* @rules */
+@charset "utf-8";
+@import 'xxx0.css';
+@import url('xxx1.css') screen and (orientation: landscape);  /* https://developer.mozilla.org/en-US/docs/Web/CSS/@import#importing_css_rules_conditionally */
+@namespace svg url('http://www.w3.org/2000/svg');  /* https://developer.mozilla.org/en-US/docs/Web/CSS/@namespace#specifying_default_and_prefixed_namespaces */
+@font-face {
+	font-family: My_First_Font;
+    font-weight: bold;  /* font-weight / font-stretch / font-style */
+	src: url('Sansation_Bold.ttf')
+		,url('Sansation_Bold.eot');  /* IE9 */
+}
+
+
+
+/* background */
+div.background {
+    background-image: url('https://tuntuntunwu.com/favicon.ico'), linear-gradient(red 10%, yellow 10% 50%, green 50%);
+    background-position: top 5px left 10px, 25% right 1cm;
+    background-repeat: repeat space, round no-repeat;
+    background-attachment: fixed, scroll;
+    /* background-color / background-image / background-position / background-repeat / background-attachment */
+    
+    /*
+    background-size: contain; cover; 50%;
+    background-origin: border-box; padding-box; content-box;
+    background-clip: border-box; padding-box; content-box; text;
+    */
+}
+
+
+
+/* font */
+div.font {
+    /* font-family / font-size / font-weight */
+    
+    /*
+    font-stretch: 50%; 150%;
+    font-style: oblique 10deg; oblique 40deg;
+    font-kerning: normal; none;
+    font-variant: https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant;
+    */
+}
+/* make all browsers show the same size font */
+body { font-size: 100%; }
+div.font { font-size: xxxem; }
+
+
+
+/* text */
+div.text {
+    /* color / text-align / text-indent */
+
+    /*
+    text-decoration: https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration;
+    text-emphasis: https://developer.mozilla.org/en-US/docs/Web/CSS/text-emphasis;
+    text-shadow: 5px 5px 2px gray;
+    */
+
+    /* text layout */
+    letter-spacing: -2px;
+    word-spacing: 3px;
+    line-height: 2.5;
+    white-space: normal;  /* https://www.jianshu.com/p/ec8af8f4e335 */
+    line-break: auto;  /* https://developer.mozilla.org/en-US/docs/Web/CSS/line-break */
+    word-break: normal;  /* https://developer.mozilla.org/en-US/docs/Web/CSS/word-break */
+    
+    /* writing direction */
+    writing-mode: horizontal-tb;  /* horizontal-tb; vertical-rl; vertical-lr; */
+    direction: ltr;  /* ltr; rtl; */
+    text-orientation: mixed;  /* mixed; upright; It only affects text in vertical mode (vertical-rl/vertical-lr). */
+    
+    /* text keep when overflow */
+    white-space: normal;  /* wrap values: normal; pre-wrap; pre-line; */
+    overflow: scroll;
+    overflow-wrap: break-word;  /* overflow-wrap = word-wrap: https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-wrap */
+    
+    /* text hidden when overflow */
+    white-space: nowrap;  /* no wrap values: nowrap; pre; */
+    overflow: hidden;
+    text-overflow: ellipsis;  /* ellipsis; <string> */
+}
+
+
+
+/* box border */
+div.border {
+    border: 1px solid red;
+    /* border = border-width + border-style + border-color */
+
+    /*
+    border-radius: 20px; 30%;
+    border-image: https://developer.mozilla.org/en-US/docs/Web/CSS/border-image;
+    */
+}
+
+
+
+/* box outline */
+div.outline {
+    outline: 1px solid green;
+    /* outline = outline-width + outline-style + outline-color / outline-offset */
+}
+
+
+
+/* box */
+div {
+    /* margin / padding / min-width / max-width / width / min-height / max-height / height / vertical-align / box-sizing */
+    /* display / visibility / overflow */
+    /* clip-path / resize / opacity / box-shadow / cursor */
+    
+    /*
+    clip-path: https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path;
+    resize: none; both; horizontal; vertical; block; inline;
+    opacity: 0.9;
+    box-shadow: 10px 10px 3px 3px gray;
+    cursor: https://developer.mozilla.org/en-US/docs/Web/CSS/cursor;
+    */
+}
+
+
+
+/* legacy layout */
+div {
+    /* position / top / right / bottom / left / z-index / float / clear */
+}
+
+
+
+/* <ul> <ol> */
+ul, ol {
+    /* list-style = list-style-type + list-style-position + list-style-image */
+}
+/* make all browsers show the same list marker image */
+ul {
+    list-style-type: none;
+	padding: 0px;
+	margin: 0px;
+}
+ul li {
+    background-image: url('https://tuntuntunwu.com/favicon.ico');
+	background-repeat: no-repeat;
+	background-position: 0px 5px;
+	padding-left: 14px;
+}
+
+
+
+/* <table> */
+table {
+    /* border-collapse / border-spacing */
+
+    /*
+    border-collapse: collapse; separate;
+    */
+}
+table caption {
+    /* caption-side */
+}
+
+
+
+/* transform */
+/* 2D */
+div.transform_children {
+    transform: scale(0.5) perspective(500px) translateZ(100px);
+    transform-origin: left 40%;  /* the percentage refers to its own size rather than its container's size */
+    /* transform: matrix(scx, sky, skx, scy, tx, ty); scale(x_tim, y_tim); skew(x_deg, y_deg); translate(x_dis, y_dis); rotate(deg); */
+    /* transform: matrix3d(); perspective(dis); scale3d(x_tim, y_tim, z_tim); translate3d(x_dis, y_dis, z_dis); rotate3d(x_vec, y_vec, z_vec, deg); */
+    /* transform-origin */
+    
+    /*
+    backface-visibility: visible; hidden;
+    */
+}
+/* 3D: https://developer.mozilla.org/en-US/docs/Web/CSS/backface-visibility#examples */
+div.transform_parent {
+    transform-style: preserve-3d;  /* flat; preserve-3d; */
+    perspective: 550px;
+    perspective-origin: 150% 150%;  /* https://developer.mozilla.org/en-US/docs/Web/CSS/perspective-origin */
+}
+
+
+
+/* transition */
+div.transition {
+    /* transition is actually the listener of this element's properties, it will be applied when this element's watched properties changed */
+    /* different properties' states may be defined using pseudo-classes like :hover or :active or dynamically set by JavaScript */
+
+    /* it's just a general form, in fact, it doesn't need all these declarations */
+    -o-transition: width 2s, -o-transform 2s -0.5s;  /* for compatibility */
+    -ms-transition: width 2s, -ms-transform 2s -0.5s;
+    -moz-transition: width 2s, -moz-transform 2s -0.5s;
+    -webkit-transition: width 2s, -webkit-transform 2s -0.5s;
+    transition: width 2s, transform 2s -0.5s;
+    /* transition = transition-property + transition-duration + transition-timing-function + transition-delay */
+    
+    /*
+    transition-property: none; all; 任何CSSkeyword属性; <custom-ident>;
+    transition-timing-function: https://developer.mozilla.org/en-US/docs/Web/CSS/easing-function;
+    */
+}
+
+
+
+/* animation */
+@-xxx-keyframes my_first_animation {
+    0%   { width: 100px; }
+    50%  { width: 300px; transform: scale(0.5); }
+    100% { width: 200px; }
+}
+@keyframes my_first_animation {
+    0%   { width: 100px; }
+    50%  { width: 300px; transform: scale(0.5); }
+    100% { width: 200px; }
+}
+div.animation {
+    -xxx-animation: my_first_animation 4s;
+    animation: my_first_animation 4s;
+    /* animation = animation-name + animation-duration + animation-timing-function + animation-delay
+    + animation-iteration-count + animation-direction + animation-fill-mode + animation-play-state */
+
+    /*
+    animation-iteration-count: 1; 0; 2.4; infinite;
+    animation-direction: normal; reverse; alternate; alternate-reverse;
+    animation-fill-mode: https://developer.mozilla.org/en-US/docs/Web/CSS/animation-fill-mode;
+    animation-play-state: running; paused;
+    */
+}
+
+
+
+/* flexbox layout */
+div.container {
+    /* https://developer.mozilla.org/zh-CN/docs/Learn/CSS/CSS_layout/Flexbox */
+
+    display: flex;
+    flex-flow: row wrap;
+    /* display: flex; inline-flex; / flex-flow = flex-direction + flex-wrap */
+
+    grid-gap: 20px 5%;
+    gap: 20px 5%;  /* for compatibility */
+    /* gap = row-gap + column-gap */
+
+    /* https://my_blog... */
+    
+    /* how to distribute the container(parent element)'s extra space to divisions */
+    /* divisions' placement in the container(parent element) */
+    justify-content: start;  /* !!! default value: start. flexbox don't support 'justify-content: stretch;' !!! */
+    align-content: stretch;  /* default value: stretch. stretch values: normal; stretch; | no stretch values: start; center; end; space-between; space-around; space-evenly; */
+    /* place-content = align-content + justify-content */
+
+    /* how to distribute each division's extra space to each item(child element) */
+    /* each item(child element)'s placement in each division */
+    /* !!! flexbox don't support 'justify-items'. flexbox use 'flex' of items to distribute extra space rather than 'justify-content: stretch;' and 'justify-items' !!! */
+    align-items: stretch;  /* default value: stretch. stretch values: normal; stretch; | no stretch values: start; center; end; */
+    /* place-items = align-items + justify-items */
+}
+div.item {
+    flex: 1 1 30px;
+    order: 1;
+    /* flex = flex-grow + flex-shrink + flex-basis / order */
+    /* 1. 'flex-basis' will cover 'width' and thoroughly disable 'justify-content'. 'flex-basis' > 'width'.
+        with 'flex', item basis width is 'flex-basis'(if not declared, it's 0); without 'flex', item basis width is 'width'.
+       2. item without 'flex' don't grow when the container's space enough, but have to shrink when the container's space not enough.
+       3. 'flex-basis' + 'flex-wrap' will disable 'flex-shrink'. */
+
+    /* cover 'xxx-items' in individual item(child element) */
+    /* justify-self: stretch; */
+    align-self: stretch;
+    /* 'xxx-self/xxx-items' actually adjust the item(child element)'s margin in division. so 'margin' will cover them. 'margin' > 'xxx-self' > 'xxx-items' */
+    margin: auto;
+    /* place-self = align-self + justify-self / margin */
+}
+
+
+
+/* grid layout */
+div.container {
+    /* https://developer.mozilla.org/zh-CN/docs/Learn/CSS/CSS_layout/Grids */
+
+    display: grid;
+    /* display: grid; inline-grid; / grid-auto-flow */
+
+    grid-template-columns: repeat(3, 1fr);  /* known finite manual */
+    grid-auto-rows: minmax(100px, auto);  /* unknown infinite auto */
+    /* grid-template-rows / grid-template-columns / grid-auto-rows / grid-auto-columns */
+    /* grid-template-areas */
+
+    grid-gap: 20px 5%;
+    gap: 20px 5%;  /* for compatibility */
+    /* gap(grid-gap) = row-gap(grid-row-gap) + column-gap(grid-column-gap) */
+
+    /* https://my_blog... */
+    
+    /* how to distribute the container(parent element)'s extra space to divisions */
+    /* divisions' placement in the container(parent element) */
+    justify-content: stretch;  /* default value: stretch */
+    align-content: stretch;  /* default value: stretch. stretch values: normal; stretch; | no stretch values: start; center; end; space-between; space-around; space-evenly; */
+    /* place-content = align-content + justify-content */
+
+    /* how to distribute each division's extra space to each item(child element) */
+    /* each item(child element)'s placement in each division */
+    justify-items: stretch;  /* default value: stretch */
+    align-items: stretch;  /* default value: stretch. stretch values: normal; stretch; | no stretch values: start; center; end; */
+    /* place-items = align-items + justify-items */
+}
+div.item {
+    grid-row: 1;
+    grid-column: 1 / 3;
+    /* grid-row = grid-row-start + grid-row-end / grid-column = grid-column-start + grid-column-end / grid-area / order */
+
+    /* cover 'xxx-items' in individual item(child element) */
+    justify-self: stretch;
+    align-self: stretch;
+    /* 'xxx-self/xxx-items' actually adjust the item(child element)'s margin in division. so 'margin' will cover them. 'margin' > 'xxx-self' > 'xxx-items' */
+    margin: auto;
+    /* place-self = align-self + justify-self / margin */
+}
+
+
+
+/* multi-column layout */
+div.container {
+    /* https://developer.mozilla.org/zh-CN/docs/Learn/CSS/CSS_layout/Multiple-column_Layout */
+
+    column-count: 3;
+    column-width: 200px;  /* 'column-count' will cover 'column-width'. 'column-count' > 'column-width'  */
+    /* columns = column-count + column-width */
+
+    column-rule: 4px dotted rgb(79, 185, 227);  /* the rules don't take up any space just like outlines */
+    /* column-gap / column-rule */
+}
+div.content {
+    /* columns = column-count + column-width / column-gap / column-rule */  /* all these properties can be used in an element to multi-column its text */
+    
+    column-span: none;  /* none; all; */
+    /* column-span */
+
+    break-inside: avoid;
+    page-break-inside: avoid;  /* for compatibility */
+    /* all properties to control the breaking of content in multicol and in paged media: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fragmentation */
+}
+
+
+
+/* media queries */
+/* https://developer.mozilla.org/zh-CN/docs/Learn/CSS/CSS_layout/Media_queries */
+@media screen and (min-width: 400px), screen and (orientation: landscape) {
+    body {
+        color: blue;
+    }
+}
+@media media_types {}  /* all; screen; print; speech; */
+@media (media_features) {}  /* width; height; hover; pointer; orientation; https://developer.mozilla.org/zh-CN/docs/Web/CSS/@media */
+
